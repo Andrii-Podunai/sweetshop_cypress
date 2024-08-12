@@ -46,18 +46,18 @@ describe('Sweet Shop - Basket Tests', () => {
     // Verify that the updated total price includes the shipping cost
     cy.get('#basketItems .list-group-item strong').should(($total) => {
       const updatedTotalPrice = parseFloat($total.text().replace('£', ''));
-      // expect(updatedTotalPrice).to.eq(expectedTotalPrice); // Uncomment this to validate the price
+      // expect(updatedTotalPrice).to.eq(expectedTotalPrice); // Uncomment this when bag is fixed
     });
 
     // Fill in the checkout form with user details
-    cy.get('input#name').eq(0).type('John Doe');
-    cy.get('input#name').eq(1).type('Doe');
-    cy.get('input#email').type('john.doe@example.com');
-    cy.get('input#address').type('123 Sweet Street, Candyland');
+    cy.get('input#name').eq(0).type('John');
+    cy.get('input#name').eq(1).type('Brainee');
+    cy.get('input#email').type('john.brainee@example.com');
+    cy.get('input#address').type('123 Sweet Street');
     cy.get('select#country').select('United Kingdom');
-    cy.get('select#city').select('Bristol');
-    cy.get('input#zip').type('BS1 5AH');
-    cy.get('input#cc-name').type('John Doe');
+    cy.get('select#city').select('Birmingham');
+    cy.get('input#zip').type('35005');
+    cy.get('input#cc-name').type('John Brainee');
     cy.get('input#cc-number').type('4111111111111111');
     cy.get('input#cc-expiration').type('12/25');
     cy.get('input#cc-cvv').type('123');
